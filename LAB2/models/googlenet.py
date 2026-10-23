@@ -7,7 +7,7 @@ class GoogLeNet(nn.Module):
     def __init__(self, num_classes: int = 21):
         super().__init__()
 
-        # ---- stem: input (bs, 3, 224, 224) ----
+        # input (bs, 3, 224, 224)
         self.stem = nn.Sequential(
             nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3),   # (bs, 64, 112, 112)
             nn.ReLU(inplace=True),
@@ -19,7 +19,7 @@ class GoogLeNet(nn.Module):
             nn.MaxPool2d(kernel_size=3, stride=2, ceil_mode=True),  # (bs, 192, 28, 28)
         )
 
-        # ---- các khối Inception: in_ch của khối sau = out_ch của khối trước ----
+        # các khối Inception: in_ch của khối sau = out_ch của khối trước
         i3a = Inception(in_ch=192, n1x1=64, n3x3_red=96, n3x3=128,
                         n5x5_red=16, n5x5=32, pool_proj=32)                    # 256
         i3b = Inception(in_ch=i3a.out_ch, n1x1=128, n3x3_red=128, n3x3=192,
@@ -41,7 +41,7 @@ class GoogLeNet(nn.Module):
         i5b = Inception(in_ch=i5a.out_ch, n1x1=384, n3x3_red=192, n3x3=384,
                         n5x5_red=48, n5x5=128, pool_proj=128)                  # 1024
 
-        # ---- thân: 2 + 5 + 2 khối Inception, xen kẽ MaxPool ----
+        # 2 + 5 + 2 khối Inception, xen kẽ MaxPool 
         self.stage3 = nn.Sequential(i3a, i3b)                                  # (bs, 480, 28, 28)
         self.pool3 = nn.MaxPool2d(kernel_size=3, stride=2, ceil_mode=True)     # (bs, 480, 14, 14)
 
@@ -50,7 +50,7 @@ class GoogLeNet(nn.Module):
 
         self.stage5 = nn.Sequential(i5a, i5b)                                  # (bs, 1024, 7, 7)
 
-        # ---- head ----
+        # head
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))                            # (bs, 1024, 1, 1)
         self.dropout = nn.Dropout(p=0.4)
         self.fc = nn.Linear(i5b.out_ch, num_classes)
