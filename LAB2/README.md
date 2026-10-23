@@ -66,8 +66,6 @@ LAB2/
 - **MNIST:** Bộ dữ liệu ảnh chữ số viết tay, thường được sử dụng trong bài toán phân loại ảnh.
 - **VinaFood21:** Bộ dữ liệu ảnh thực phẩm gồm 21 lớp, được sử dụng trong các bài tập phân loại ảnh tương ứng.
 
-Đường dẫn tải dữ liệu và cách tổ chức thư mục dữ liệu cần được bổ sung theo cấu hình thực tế của dự án.
-
 ## 6. Thực hiện bài tập
 
 1. Mở `CNN_Requirements.ipynb` để xem yêu cầu của các bài tập.
