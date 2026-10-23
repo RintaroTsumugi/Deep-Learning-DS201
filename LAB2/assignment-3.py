@@ -49,7 +49,6 @@ if __name__ == "__main__":
                              std=[0.229, 0.224, 0.225]),
     ])
 
-    # ImageFolder: mỗi lớp là một thư mục con bên trong train/ và test/
     train_dataset = datasets.ImageFolder(TRAIN_DIR, transform=transform)
     test_dataset = datasets.ImageFolder(TEST_DIR, transform=transform)
     print("Số lớp:", len(train_dataset.classes), "| train:", len(train_dataset), "| test:", len(test_dataset))
