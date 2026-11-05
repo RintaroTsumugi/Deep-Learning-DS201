@@ -4,7 +4,7 @@
 
 Repository này chứa các bài tập thực hành về **mạng nơ-ron hồi quy (Recurrent Neural Networks – RNN)**, bao gồm các mô hình học sâu được triển khai bằng Python và PyTorch.
 
-Nội dung được tổ chức thành các file yêu cầu bài tập, chương trình thực thi từng bài, các mô hình mạng nơ-ron và tiện ích xử lý dữ liệu.
+Nội dung được tổ chức thành file yêu cầu bài tập và chương trình thực thi từng bài.
 
 ## 2. Mục tiêu
 
