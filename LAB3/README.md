@@ -8,8 +8,8 @@ Nội dung được tổ chức thành file yêu cầu bài tập và chương t
 
 ## 2. Mục tiêu
 
-- Thực hành xây dựng và sử dụng các mô hình phân loại ảnh.
-- Làm việc với bộ dữ liệu UIT-VSFC và PhoNER theo yêu cầu của từng bài tập.
+- Thực hành xây dựng các mô hình mạng nơ-ron.
+- Làm việc với bộ dữ liệu UIT-VSFC và PhoNERT theo yêu cầu của từng bài tập.
 
 ## 3. Cấu trúc thư mục
 
