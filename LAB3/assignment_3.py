@@ -9,7 +9,7 @@ from tqdm import tqdm
 import numpy as np
 
 from data_utils.phoner import PhoNER, Vocab, collate_fn, IGNORE_INDEX
-from models.classifiers.bilstm import BiLstmModel
+from models.classifiers.bilstm import Encoder
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     )
 
     print("Initializing model and utilities ...")
-    model = BiLstmModel(
+    model = Encoder(
         vocab_size=vocab.len,
         hidden_size=256,
         n_layer=5,
